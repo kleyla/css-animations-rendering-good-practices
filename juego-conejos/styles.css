@@ -1,0 +1,275 @@
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+:root {
+  --sky: #8cdbff;
+  --muro: wheat;
+  --rabbit: white;
+  --rabbit-w: 80px;
+  --cesped: #65a168;
+  --tierra-dark: #a3563a;
+  --tierra: #ba6d4f;
+}
+.phone {
+  position: relative;
+  border: 8px solid black;
+  border-radius: 40px;
+  height: 600px;
+  width: 300px;
+  background-color: var(--sky);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  /* z-index: 15; */
+}
+.layer {
+  position: absolute;
+  bottom: 0;
+}
+.layer-1 {
+  z-index: 1;
+  height: 450px;
+  width: var(--rabbit-w);
+  /* background-color: black; */
+  right: 60px;
+}
+.layer-2 {
+  z-index: 2;
+  height: 450px;
+  width: var(--rabbit-w);
+  /* background-color: black; */
+  left: 60px;
+}
+
+.wall {
+  border-radius: 40px 40px 0 0;
+  background-color: var(--tierra);
+}
+.wall-layer-3 {
+  z-index: 3;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 220px;
+  height: 400px;
+  box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.2);
+}
+/* conejo */
+.layer-4 {
+  z-index: 4;
+  height: 350px;
+  width: var(--rabbit-w);
+  left: 40px;
+  /* background-color: black; */
+}
+/* muro */
+.wall-layer-5 {
+  z-index: 5;
+  left: 0;
+  width: 200px;
+  height: 300px;
+  background-color: var(--tierra);
+  box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.2);
+  border-radius: 40px 40px 0 40px;
+}
+/* conejo */
+.layer-6 {
+  z-index: 6;
+  right: 40px;
+  height: 280px;
+  /* background-color: black; */
+  width: var(--rabbit-w);
+}
+/* muro */
+.wall-layer-7 {
+  z-index: 7;
+  width: 180px;
+  height: 230px;
+  right: 0;
+  background-color: var(--tierra);
+  box-shadow: -12px 12px 24px rgba(0, 0, 0, 0.2);
+  border-radius: 40px 40px 40px 0;
+}
+/* cesped */
+.layer-8 {
+  z-index: 8;
+  width: 200px;
+  height: 100px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  /* background-color: black; */
+}
+/* nube */
+.layer-9 {
+  z-index: 9;
+  width: 120px;
+  height: 90px;
+  left: 0;
+  /* background-color: black; */
+}
+/* nube */
+.layer-10 {
+  z-index: 10;
+  width: 120px;
+  height: 90px;
+  right: 0;
+  /* background-color: black; */
+}
+
+/* Dibujando */
+.ear--outer {
+  background-color: var(--rabbit);
+  border-radius: 90%;
+  width: 20px;
+  height: 50px;
+  position: absolute;
+}
+.ear--outer-left {
+  left: 10px;
+}
+.ear--inner {
+  background-color: pink;
+  border-radius: 90%;
+  width: 10px;
+  height: 50px;
+  position: absolute;
+}
+.ear--inner-left {
+  left: 15px;
+  top: 8px;
+}
+.ear--outer-right {
+  right: 10px;
+}
+.ear--inner-right {
+  right: 15px;
+  top: 8px;
+}
+
+.head {
+  background-color: var(--rabbit);
+  border-radius: 50%;
+  height: 80px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  position: absolute;
+  top: 30px;
+  width: 100%;
+}
+.head__eye {
+  background-color: black;
+  border-radius: 50%;
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  top: 15px;
+}
+.head__eye--left {
+  left: 30px;
+}
+
+.head__eye--right {
+  right: 30px;
+}
+.cesped-line {
+  border-radius: 40px 40px 0 0;
+  width: 100%;
+  height: 20px;
+  background-color: var(--cesped);
+}
+.bg-dark {
+  background-color: var(--tierra-dark);
+}
+.zigzag {
+  background: linear-gradient(135deg, var(--cesped) 25%, transparent 25%) -20px 0,
+    linear-gradient(-135deg, var(--cesped) 25%, transparent 25%) -20px 0,
+    linear-gradient(45deg, var(--tierra) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--tierra) 25%, transparent 25%);
+  background-size: 40px 20px;
+  height: 20px;
+}
+.circle {
+  border-radius: 50%;
+  position: absolute;
+}
+.circle-1 {
+  width: 50px;
+  height: 50px;
+  background-color: var(--cesped);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.circle-2 {
+  width: 60px;
+  height: 60px;
+  background-color: var(--cesped);
+  top: 30px;
+  left: 50px;
+}
+.circle-3 {
+  width: 60px;
+  height: 60px;
+  background-color: var(--cesped);
+  top: 20px;
+  right: 30px;
+}
+.circle-4 {
+  width: 150px;
+  height: 60px;
+  background-color: var(--cesped);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border-radius: 0;
+}
+.cloud-1 {
+  background-color: white;
+  width: 60px;
+  height: 60px;
+  top: 0;
+  border-radius: 50% 50% 50% 0;
+}
+.cloud-2 {
+  background-color: white;
+  width: 70px;
+  height: 70px;
+  right: 0;
+  bottom: 0;
+  border-radius: 50% 50% 50% 0;
+}
+.cloud-3 {
+  background-color: white;
+  width: 70px;
+  height: 70px;
+  bottom: 0;
+  border-radius: 50% 50% 10px 30px;
+}
+.cloud-11 {
+  background-color: white;
+  width: 70px;
+  height: 70px;
+  top: 0;
+  right: 0;
+}
+.cloud-22 {
+  background-color: white;
+  width: 60px;
+  height: 60px;
+  bottom: 0;
+  left: 0%;
+  border-radius: 50% 50% 0 50%;
+}
+.cloud-33 {
+  background-color: white;
+  width: 70px;
+  height: 70px;
+  bottom: 0;
+  right: 0;
+  border-radius: 50% 10px 30px 0;
+}

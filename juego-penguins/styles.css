@@ -4,6 +4,7 @@ body {
   width: 100%;
   display: grid;
   place-items: center;
+  counter-reset: score;
 }
 :root {
   --sky: #b9e9f0;
@@ -32,12 +33,23 @@ body {
   height: 460px;
   width: var(--penguin-w);
   right: 60px;
+  /* animation */
+  animation-name: jump;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
 .layer-2 {
   z-index: 2;
   height: 460px;
   width: var(--penguin-w);
   left: 60px;
+  /* animation */
+  animation-name: jump;
+  animation-delay: 0.5s;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
 
 .wall {
@@ -59,6 +71,12 @@ body {
   height: 360px;
   width: var(--penguin-w);
   left: 40px;
+  /* animation */
+  animation-name: jump;
+  animation-delay: 0.6s;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
 /* muro */
 .wall-layer-5 {
@@ -76,6 +94,12 @@ body {
   right: 40px;
   height: 290px;
   width: var(--penguin-w);
+  /* animation */
+  animation-name: jump;
+  animation-duration: 1s;
+  animation-delay: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
 /* muro */
 .wall-layer-7 {
@@ -161,6 +185,24 @@ body {
   position: absolute;
   border-radius: 50%;
   top: 7px;
+  /* animacion */
+  animation-name: blink;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+  0% {
+    height: 6px;
+  }
+  10% {
+    transform: translate(0px 3px);
+    height: 1px;
+  }
+  20% {
+    transform: translate(0px 0px);
+    height: 6px;
+  }
 }
 .dot-left {
   left: 8px;
@@ -269,4 +311,42 @@ body {
   width: 80px;
   height: 60px;
   border-radius: 50% 0 30px 0;
+}
+
+/* animaciones */
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+  25% {
+    bottom: -80px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  cursor: pointer;
+  height: 70px;
+  width: 80px;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  z-index: 4;
+}
+input[type="checkbox"]:focus {
+  appearance: none;
+  outline: none;
+}
+input:checked {
+  counter-increment: score;
+  /* background-color: red; */
+}
+.score {
+  text-align: center;
+}
+.score::after {
+  content: counter(score);
 }

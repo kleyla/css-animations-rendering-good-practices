@@ -23,6 +23,7 @@ body {
   width: 300px;
   background-color: var(--sky);
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
 }
 .layer {
   position: absolute;
@@ -264,16 +265,27 @@ body {
   width: 100px;
   top: 5px;
   left: 0;
+  animation-name: move-right;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
 }
 .sea-line-2 {
   width: 180px;
   top: 20px;
   right: 0;
+  animation-name: move-right;
+  animation-duration: 5s;
+  animation-delay: 0.5s;
+  animation-iteration-count: infinite;
 }
 .sea-line-3 {
   width: 150px;
   top: 30px;
   left: 0;
+  animation-name: move-right;
+  animation-duration: 5s;
+  animation-delay: 0.3s;
+  animation-iteration-count: infinite;
 }
 .circle {
   background-color: white;
@@ -326,6 +338,16 @@ body {
   }
 }
 
+@keyframes move-right {
+  from {
+    left: 0;
+    width: 30px;
+  }
+  to {
+    width: 50px;
+    left: 150px;
+  }
+}
 input[type="checkbox"] {
   appearance: none;
   cursor: pointer;
@@ -335,6 +357,7 @@ input[type="checkbox"] {
   position: absolute;
   top: 0;
   z-index: 4;
+  animation-direction: re;
 }
 input[type="checkbox"]:focus {
   appearance: none;

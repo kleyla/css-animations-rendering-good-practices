@@ -1,0 +1,272 @@
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+:root {
+  --sky: #b9e9f0;
+  --penguin-w: 80px;
+  --br-try: red;
+  --penguin-body: black;
+  --penguin-beak: #fcbe08;
+  --ice: #62d3f1;
+  --sea: #e3f8fb;
+}
+.phone {
+  position: relative;
+  border: 8px solid black;
+  border-radius: 40px;
+  height: 600px;
+  width: 300px;
+  background-color: var(--sky);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+.layer {
+  position: absolute;
+  bottom: 0;
+}
+.layer-1 {
+  z-index: 1;
+  height: 460px;
+  width: var(--penguin-w);
+  right: 60px;
+}
+.layer-2 {
+  z-index: 2;
+  height: 460px;
+  width: var(--penguin-w);
+  left: 60px;
+}
+
+.wall {
+  border-radius: 40px 40px 0 0;
+  background-color: var(--ice);
+}
+.wall-layer-3 {
+  z-index: 3;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 220px;
+  height: 400px;
+  box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.2);
+}
+/* penguin */
+.layer-4 {
+  z-index: 4;
+  height: 360px;
+  width: var(--penguin-w);
+  left: 40px;
+}
+/* muro */
+.wall-layer-5 {
+  z-index: 5;
+  left: 0;
+  width: 200px;
+  height: 300px;
+  background-color: var(--ice);
+  box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.2);
+  border-radius: 40px 40px 0 30px;
+}
+/* penguin */
+.layer-6 {
+  z-index: 6;
+  right: 40px;
+  height: 290px;
+  width: var(--penguin-w);
+}
+/* muro */
+.wall-layer-7 {
+  z-index: 7;
+  width: 180px;
+  height: 230px;
+  right: 0;
+  background-color: var(--ice);
+  box-shadow: -12px 12px 24px rgba(0, 0, 0, 0.2);
+  border-radius: 40px 40px 30px 0;
+}
+/* sea */
+.layer-8 {
+  z-index: 8;
+  width: 200px;
+  height: 100px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+/* nube */
+.layer-9 {
+  z-index: 9;
+  width: 120px;
+  height: 90px;
+  left: 0;
+}
+/* nube */
+.layer-10 {
+  z-index: 10;
+  width: 120px;
+  height: 90px;
+  right: 0;
+}
+.penguin-body {
+  background-color: var(--penguin-body);
+  height: 70px;
+  width: 50px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+.penguin-hand {
+  background-color: var(--penguin-body);
+  width: 30px;
+  height: 8px;
+  border-radius: 40%;
+  position: absolute;
+  z-index: 1;
+}
+.penguin-hand-left {
+  left: 0;
+  top: 25px;
+  transform: rotate(-40deg);
+}
+.penguin-hand-right {
+  top: 20px;
+  right: 0;
+  transform: rotate(140deg);
+}
+.penguin-eye {
+  background-color: white;
+  width: 25px;
+  height: 30px;
+  position: absolute;
+  top: 8px;
+  z-index: 2;
+}
+.penguin-eye-left {
+  left: 5px;
+  border-radius: 50% 50% 0 0;
+}
+.penguin-eye-right {
+  right: 5px;
+  border-radius: 50% 50% 0 0;
+}
+.dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--penguin-body);
+  position: absolute;
+  border-radius: 50%;
+  top: 7px;
+}
+.dot-left {
+  left: 8px;
+}
+.dot-right {
+  right: 8px;
+}
+.penguin-beak {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid var(--penguin-beak);
+  position: absolute;
+  top: 22px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 3;
+}
+.penguin-belly {
+  background-color: white;
+  width: 40px;
+  height: 25px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 30px;
+  margin: 0 auto;
+  border-radius: 0 0 50% 50%;
+}
+.penguin-foot {
+  width: 15px;
+  height: 8px;
+  background-color: var(--penguin-beak);
+  position: absolute;
+  top: 52px;
+  border-radius: 50%;
+}
+.penguin-foot-left {
+  left: 10px;
+}
+.penguin-foot-right {
+  right: 10px;
+}
+.sea {
+  background-color: var(--sea);
+  width: 100%;
+  height: 45px;
+  position: absolute;
+  bottom: 0;
+}
+.sea-line {
+  background-color: #62d3f1;
+  position: absolute;
+  height: 1px;
+}
+.sea-line-1 {
+  width: 100px;
+  top: 5px;
+  left: 0;
+}
+.sea-line-2 {
+  width: 180px;
+  top: 20px;
+  right: 0;
+}
+.sea-line-3 {
+  width: 150px;
+  top: 30px;
+  left: 0;
+}
+.circle {
+  background-color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+}
+.cloud-1 {
+  left: 0;
+  border-radius: 50% 50% 0 0;
+}
+.cloud-2 {
+  right: 20px;
+  top: 20px;
+}
+.cloud-3 {
+  left: 0;
+  bottom: 0;
+  width: 80px;
+  height: 60px;
+  border-radius: 50% 50% 50% 30px;
+}
+.cloud-11 {
+  right: 0;
+  top: 0;
+}
+.cloud-22 {
+  left: 0;
+  bottom: 0;
+}
+.cloud-33 {
+  right: 0;
+  bottom: 0;
+  width: 80px;
+  height: 60px;
+  border-radius: 50% 0 30px 0;
+}
